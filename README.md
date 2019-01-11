@@ -14,4 +14,4 @@ $ npm start
 
 ### Heroku App
 
-[![N|Solid](https://upload.wikimedia.org/wikipedia/commons/9/9a/Logo-Tokopedia.png)](http://guizot.herokuapp.com/)
+[![N|Solid](https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg)](http://guizot.herokuapp.com/)
