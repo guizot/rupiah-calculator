@@ -57,17 +57,17 @@ function funcNotRp(params) {
       //GET RID 0
       let idx = value.split("").findIndex(item => parseInt(item) !== 0);
       value = value.substring(idx, value.length);
-      let calculated = calcProcess(value);
+      let calculated = calcProcess(value, errorMissing);
       return calculated;
     } else {
-      let calculated = calcProcess(value);
+      let calculated = calcProcess(value, errorMissing);
       return calculated;
     }
   }
 }
 
 /* CALCULATE PROCESS */
-function calcProcess(value) {
+function calcProcess(value, errorMissing) {
   let dots = value.indexOf(".") !== -1;
   let comma = value.indexOf(",") !== -1;
   let space = value.indexOf(" ") !== -1;
@@ -78,6 +78,11 @@ function calcProcess(value) {
     return { error: true, msg: "Can not use comma for separator" };
   }
   if (dots && comma) {
+    let commaVal = value.substring(value.indexOf(","), value.length);
+    let ifDots = commaVal.indexOf(".") !== -1;
+    if(ifDots){
+      return errorMissing;
+    }
     value = value.substring(0, value.indexOf(","));
   }
   let getNum = value.replace(/\D/g, "");
