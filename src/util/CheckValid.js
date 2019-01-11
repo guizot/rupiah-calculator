@@ -78,9 +78,9 @@ function calcProcess(value, errorMissing) {
     return { error: true, msg: "Can not use comma for separator" };
   }
   if (dots && comma) {
-    let commaVal = value.substring(value.indexOf(","), value.length);
-    let ifDots = commaVal.indexOf(".") !== -1;
-    if(ifDots){
+    let valComma = value.substring(value.indexOf(",") + 1, value.length);
+    let cekComma = valComma.split("").find(fi => isNaN(parseInt(fi)));
+    if (cekComma) {
       return errorMissing;
     }
     value = value.substring(0, value.indexOf(","));
