@@ -49,11 +49,18 @@ p{
   border-bottom: #da2727 solid 1px !important;
 }
 
-.form > .input-form > p {
+.form > .input-form > .grey-color {
+  color: #cfcfcf;
+  font-weight: 500;
+  padding-top: 5px;
+  font-size: 1.2vw;
+}
+
+.form > .input-form > .red-color {
   color: #da2727;
   font-weight: 500;
   padding-top: 5px;
-  font-size: 1.45vw;
+  font-size: 1.2vw;
 }
 
 ::placeholder {

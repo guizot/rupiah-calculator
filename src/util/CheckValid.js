@@ -23,13 +23,7 @@ function funcWithRp(params) {
     return errorMissing;
   }
   if (firstChar && !lastChar) {
-    let idx = "";
-    value.split("").find((item, index) => {
-      if (!isNaN(parseInt(item))) {
-        idx = index;
-        return idx;
-      }
-    });
+    let idx = value.split("").findIndex(item => !isNaN(parseInt(item)));
     let spareNum = value.substring(2, idx);
     let cekfilter = spareNum.split("").filter(fi => fi !== " ");
     let cek = cekfilter.find(fi => isNaN(parseInt(fi)));
@@ -61,14 +55,7 @@ function funcNotRp(params) {
     }
     if (parseInt(value[0]) === 0) {
       //GET RID 0
-      let data = "";
-      let idx = "";
-      value.split("").find((item, index) => {
-        if (parseInt(item) !== 0) {
-          idx = index;
-          return idx;
-        }
-      });
+      let idx = value.split("").findIndex(item => parseInt(item) !== 0);
       value = value.substring(idx, value.length);
       let calculated = calcProcess(value);
       return calculated;
@@ -101,5 +88,5 @@ function calcProcess(value) {
   return { error: false, value: parseInt(value.replace(/\D/g, "")) };
 }
 
-/* RETURN FUNCTIOIN */
+/* RETURN FUNCTION */
 export default checkValid;

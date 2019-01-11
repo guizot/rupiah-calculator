@@ -9,10 +9,10 @@ class App extends Component {
     super();
     this.state = {
       givenString: "",
-      fractions: [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 100, 50],
       items: [],
       error: false,
-      msg: ""
+      fractions: [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 100, 50],
+      msg: "Ex. Rp 5000 | Rp 5.000 | 5000 | 5.000 | 005000 | 005.000"
     };
   }
 
@@ -21,13 +21,19 @@ class App extends Component {
   }
 
   calculateData() {
-    this.setState({ msg: "" })
     let amount = checkValid(this.state.givenString);
     if (!amount.error) {
       let array = calculateData(amount.value, this.state.fractions);
-      this.setState({ items: array , error: false, msg: "" });
+      this.setState({
+        items: array,
+        error: false,
+        msg: "Ex. Rp 5000 | Rp 5.000 | 5000 | 5.000 | 005000 | 005.000"
+      });
     } else {
-      this.setState({ error: true, msg: amount.msg });
+      this.setState({
+        error: true,
+        msg: amount.msg
+      });
     }
   }
 
@@ -50,7 +56,8 @@ class App extends Component {
               }
             }}
           />
-          {this.state.error && <p>{this.state.msg}</p>}
+          {!this.state.error && <p className="grey-color">{this.state.msg}</p>}
+          {this.state.error && <p className="red-color">{this.state.msg}</p>}
         </div>
         <div className="button">
           <div className="btn" onClick={this.calculateData.bind(this)}>
@@ -65,9 +72,9 @@ class App extends Component {
         {this.state.items.length > 0 && this.state.items.map((item, key) => {
           return <ListItem key={key} kurs={item.kurs.toLocaleString('id')} amount={item.amount} />;
         })}
-         {this.state.items.length === 0 && <div className="no-record">
+        {this.state.items.length === 0 && <div className="no-record">
           <p>No Record to Display</p>
-         </div>}
+        </div>}
       </div>
     );
 

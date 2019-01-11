@@ -1,3 +1,8 @@
+### Heroku App
+
+[![N|Solid](https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg)](https://rupiah-calculator.herokuapp.com/)
+
+
 ### Installation
 
 Install the dependencies
@@ -12,6 +17,3 @@ Start the server
 $ npm start
 ```
 
-### Heroku App
-
-[![N|Solid](https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg)](https://rupiah-calculator.herokuapp.com/)
