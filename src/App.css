@@ -1,32 +1,124 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* INIT */
+.app{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+p{
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* FORM */
+.form{
+  flex: 60vw;
+  height: 100vh;
+}
+
+.form > .title {
+  height: 32vh;
+  padding: 50px 60px;
+}
+
+.form > .title > p {
+  margin: 10px 0px;
+  font-weight: bold;
+  font-size: 4.5vw;
+  color: #23b515;
+}
+
+.form > .input-form {
+  height: 20vh;
+  padding: 20px 60px;
+}
+
+.form > .input-form > input {
+  border: none;
+  /* border-bottom: #23b515 solid 2px; */
+  font-size: 2.6vw;
+  font-weight: 500;
+  width: 80%;
+  padding: 0px 0px 12px 0px;
+  color: #23b515;
+}
+
+.green-line {
+  border-bottom: #23b515 solid 1px !important;
+}
+
+.red-line {
+  border-bottom: #da2727 solid 1px !important;
+}
+
+.form > .input-form > p {
+  color: #da2727;
+  font-weight: 500;
+  padding-top: 5px;
+  font-size: 1.45vw;
+}
+
+::placeholder {
+  color: #cfcfcf;
+  font-weight: normal !important;
+}
+
+.form > .button {
+  height: 20vh;
+  padding: 0px 60px
+}
+
+.form > .button > .btn{
+  height: 10vh;
+  width: 15vw;
+  border-radius: 3px;
+  background: #23b515;
+  position: relative;
+}
+
+.form > .button > .btn > p{
+  font-size: 1.4vw;
+  font-weight: 500;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form > .button > .btn:hover{
+  background: #1a9110;
+  cursor: pointer;
+}
+
+.form > .button > .btn:active{
+  background: #23b515;
+}
+
+/* LIST */
+.list{
+  flex: 40vw;
+  background: #23b515;
+  height: 100vh;
+  overflow: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  /* width: 5px; */
+  display: none;
+}
+
+.no-record{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.no-record > p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: normal;
+  font-size: 2vw;
 }
