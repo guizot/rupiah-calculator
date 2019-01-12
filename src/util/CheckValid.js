@@ -49,12 +49,11 @@ function funcNotRp(params) {
     return errorMissing;
   }
   if (!firstChar && !lastChar) {
-    let cek = value.split("").find(fi => parseInt(fi.charCodeAt(0)) > 64);
-    if (cek !== undefined) {
+    let cek = value.split("").find(fi => isNaN(parseInt(fi)));
+    if (cek !== undefined && cek !== "." && cek !== ",") {
       return errorMissing;
     }
-    if (parseInt(value[0]) === 0) {
-      //GET RID 0
+    if (parseInt(value[0]) === 0) { //GET RID 0
       let idx = value.split("").findIndex(item => parseInt(item) !== 0);
       value = value.substring(idx, value.length);
       let calculated = calcProcess(value, errorMissing);
